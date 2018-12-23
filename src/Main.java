@@ -1,18 +1,14 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 
 public class Main
         {
-            private static ArrayList<Universo> Universos;
+            private static Deus miDeus;
 
             public static void main(String[] args)
             {
-                String s = args[1];
-                int n= Integer.parseInt(s);
-                int tamaño=1;
-                int i=0;
-                
-
+                miDeus = new Deus();
 
             }
         }

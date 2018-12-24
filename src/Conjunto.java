@@ -4,26 +4,24 @@ import java.util.Collections;
 public class Conjunto
 {
     private ArrayList<Integer> esteConjunto;
-    private int largo;
+
 
     public Conjunto()
     {
         this.esteConjunto = new ArrayList<Integer>();
-        this.largo = 0;
+
     }
 
     public boolean agregarElemento(Integer in)
     {
-        if(this.largo==0)
+        if(this.esteConjunto.size()==0)
         {
             this.esteConjunto.add(in);
-            this.largo++;
             return true;
         }
-        if(this.esteConjunto.get(this.largo)<in)
+        if(this.esteConjunto.get(this.esteConjunto.size()-1)<in)
         {
             this.esteConjunto.add(in);
-            this.largo++;
             Collections.sort(this.esteConjunto);
             return true;
         }
@@ -42,11 +40,31 @@ public class Conjunto
     public String myToSreing()
     {
         String fin ="";
+        int i=0;
         for (Integer in: this.esteConjunto)
         {
-            fin=fin+in.toString();
+            if(i<this.esteConjunto.size()-1)
+            {
+                fin = fin + in.toString() + ",";
+            }
+            else
+            {
+                fin = fin + in.toString();
+            }
+            i++;
         }
         return fin;
+    }
+
+    public Conjunto copiarConjunto()
+    {
+        Conjunto nuevoConjunto = new Conjunto();
+        for (Integer in: this.esteConjunto)
+        {
+            nuevoConjunto.agregarElemento(in);
+        }
+
+        return nuevoConjunto;
     }
 
 }

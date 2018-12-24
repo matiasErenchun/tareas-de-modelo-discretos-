@@ -24,18 +24,33 @@ public class Dimension
         ArrayList<String> auxCon=new ArrayList<>();
         for (Object con: misConjuntos)
         {
-            if(con.getClass().equals(Conjunto.class))
-            {
+
                 Conjunto co = (Conjunto) con;
                 auxCon.add(co.myToSreing());
-            }
+
         }
         Collections.sort(auxCon);
         for (String cor:auxCon)
         {
-            System.out.println(cor);
+            System.out.print("{"+cor+"} ");
+        }
+        System.out.println(" ");
+
+    }
+
+    public Conjunto[] entregarConjutos()
+    {
+        Object[] objCon = this.conjuntos.toArray();
+        Conjunto [] misConjuntos = new Conjunto[objCon.length];
+        int i=0;
+        for (Object ob: objCon)
+        {
+            Conjunto con = (Conjunto) ob;
+            misConjuntos[i]=con;
+            i++;
         }
 
+        return misConjuntos;
     }
 
 

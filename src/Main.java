@@ -8,7 +8,9 @@ public class Main
 
             public static void main(String[] args)
             {
-                miDeus = new Deus();
+                String aux = args[1];
+                Integer n = Integer.parseInt(aux);
+                miDeus = new Deus(n);
 
             }
         }
